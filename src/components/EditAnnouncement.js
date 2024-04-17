@@ -1,29 +1,24 @@
-// src/components/AddAnnouncement.js
+// src/components/EditAnnouncement.js
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addAnnouncement } from '../store/actions';
+import '../App.css';
+const EditAnnouncement = ({ id, initialText, onCancel, onSave }) => {
+    const [text, setText] = useState(initialText);
 
-const AddAnnouncement = () => {
-    const [text, setText] = useState('');
-    const dispatch = useDispatch();
+    const handleChange = (e) => {
+        setText(e.target.value);
+    };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(addAnnouncement({ id: Date.now(), text }));
-        setText('');
+    const handleSave = () => {
+        onSave(id, text); // Вызываем onSave с новым текстом
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
-                type="text"
-                value={text}
-                onChange={(e) => setText(e.target.value)}
-                placeholder="Enter announcement"
-            />
-            <button type="submit">Add Announcement</button>
-        </form>
+        <div>
+            <input type="text" value={text} onChange={handleChange} />
+            <button onClick={handleSave}>Save</button>
+            <button onClick={onCancel}>Cancel</button>
+        </div>
     );
 };
 
-export default AddAnnouncement;
+export default EditAnnouncement;
