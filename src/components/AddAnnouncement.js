@@ -1,4 +1,3 @@
-// src/components/AddAnnouncement.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addAnnouncement, editAnnouncement } from '../store/actions';
@@ -28,8 +27,9 @@ const AddAnnouncement = () => {
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Enter announcement"
             />
-            <button type="submit">Add/Edit Announcement</button>
+            <button type="submit">Announcement</button>
         </form>
+
     );
 };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import AddAnnouncement from './AddAnnouncement';
+import AddAnnouncement from './AddAnnouncement'; // corrected import path
 
-test('AddAnnouncement component renders correctly', () => {
+ test('AddAnnouncement component renders correctly', () => {
     const { getByPlaceholderText, getByText } = render(<AddAnnouncement />);
     const input = getByPlaceholderText('Enter announcement');
     const addButton = getByText('Add Announcement');

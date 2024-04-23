@@ -1,4 +1,3 @@
-// src/components/EditAnnouncement.js
 import React, { useState } from 'react';
 import '../App.css';
 const EditAnnouncement = ({ id, initialText, onCancel, onSave }) => {
@@ -9,7 +8,7 @@ const EditAnnouncement = ({ id, initialText, onCancel, onSave }) => {
     };
 
     const handleSave = () => {
-        onSave(id, text); // Вызываем onSave с новым текстом
+        onSave(id, text);
     };
 
     return (
